@@ -49,6 +49,19 @@ export default class Queueback extends EventEmitter {
   }
 
   /**
+   * Remove a callback from a queue.
+   *
+   * @param {String} method HTTP method we're using.
+   * @param {String} url The HTTP URL we're hitting.
+   * @param {Function} fn Completion Callback.
+   * @public
+   */
+  remove(method, url, fn) {
+    const id = this.id(method, url);
+    return this.removeListener(id, fn);
+  }
+
+  /**
    * Call all queued callbacks for a given method/URL combination.
    *
    * @param {String} method HTTP method we're using.

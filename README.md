@@ -42,6 +42,25 @@ if (queue.add('GET', 'http://google.com', fn)) return;
 Please note that we guarantee that the callback is only called once and removed
 from the queue after execution.
 
+### remove
+
+Remove an added callback from the queue. The method accepts the following
+arguments:
+
+- `method` HTTP method
+- `url` URL that is being requested
+- `fn` Callback to remove
+
+```js
+function fn() {
+  throw new Error('I should never be called');
+}
+
+queue.add('GET', 'https://google.com', fn);
+queue.remove('GET', 'https://google.com', fn);
+queue.run('GET', 'https://google.com');
+```
+
 ### run
 
 This allows you to execute all queued callbacks for the given method and URL

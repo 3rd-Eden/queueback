@@ -110,4 +110,18 @@ describe('queueback', function () {
       queue.all();
     });
   });
+
+  describe('remove', function () {
+    it('can remove added callbacks', function (next) {
+      function failure() {
+        throw new Error('I should never be called');
+      }
+
+      queue.add('GET', '/whatever', failure);
+      queue.add('GET', '/whatever', next);
+
+      queue.remove('GET', '/whatever', failure);
+      queue.run('GET', '/whatever');
+    });
+  });
 });
