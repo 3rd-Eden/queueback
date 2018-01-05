@@ -34,7 +34,7 @@ export default class Queueback extends EventEmitter {
    */
   add (method, url, fn){
     const id = this.id(method, url);
-    const previously = this.listeners(id, true);
+    const previously = this.listenerCount(id);
 
     this.once(id, fn);
 
@@ -44,7 +44,7 @@ export default class Queueback extends EventEmitter {
     // be cached so we need to return a correct indication if it's save to
     // ignore the request.
     //
-    if (method === 'GET') return previously;
+    if (method === 'GET') return previously !== 0;
     return false;
   }
 
