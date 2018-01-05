@@ -31,5 +31,4 @@ node_modules
 *.iml
 
 # Compiled source
-lib
-yarn.lock
+!lib
