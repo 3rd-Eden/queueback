@@ -1,6 +1,6 @@
 {
   "name": "queueback",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Callback queue system for optimizing your HTTP requests",
   "main": "./lib",
   "browser": "./index",
