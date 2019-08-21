@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/destinythegame/queueback.git"
+    "url": "git+https://github.com/3rd-Eden/queueback.git"
   },
   "keywords": [
     "queue",
@@ -26,9 +26,9 @@
   "author": "Arnout Kazemier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/destinythegame/queueback/issues"
+    "url": "https://github.com/3rd-Eden/queueback/issues"
   },
-  "homepage": "https://github.com/destinythegame/queueback#readme",
+  "homepage": "https://github.com/3rd-Eden/queueback#readme",
   "dependencies": {
     "eventemitter3": "3.0.x"
   },

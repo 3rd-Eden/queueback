@@ -86,4 +86,4 @@ queue.all(new Error('Unable to authenticate with server'));
 
 ## License
 
-MIT
+[MIT](LICENSE)
