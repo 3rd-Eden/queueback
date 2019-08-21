@@ -7,10 +7,6 @@ import EventEmitter from 'eventemitter3';
  * @public
  */
 export default class Queueback extends EventEmitter {
-  constructor() {
-    super();
-  }
-
   /**
    * Compile method and URL to "semi" unique id.
    *
@@ -57,8 +53,7 @@ export default class Queueback extends EventEmitter {
    * @public
    */
   remove(method, url, fn) {
-    const id = this.id(method, url);
-    return this.removeListener(id, fn);
+    return this.removeListener(this.id(method, url), fn);
   }
 
   /**
